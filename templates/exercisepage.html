@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block head %}
+  <title>IronStrong | {{exercise_name}}</title>
+{% endblock %}
+{% block nav %}
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{ url_for('index') }}">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="{{ url_for('exercise') }}">Exercise</a>
+      </li>
+    </ul>
+{% endblock %}
+{% block body %}
+<div class="cardgang">
+<div class="card h-50 border" style="width: 40rem;">
+  <h5 class="card-title text-center" style="margin-top: 20px; font-size: 50px;">{{exercise_name}}</h5>
+<img class="exerciseimage" src={{exercise_image}} alt="exercise">
+  <div class="exerciseContent">
+    <div class="exerciseInstructions">
+  <p>{{instructions}}</p>
+  <p>Type: {{force}}</p>
+<p>Muscles Worked: {{muscle}}</p>
+<p>Equipment Required: {{equipment}}</p>
+<p>Difficulty: {{difficulty}}</p>
+      </div>
+    </div>
+<div class="card-body">
+</div>
+</div>
+  </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+  {% block head %}
+  <title>IronStrong | Exercise Lookup</title>
+    {% endblock %}
+{% block nav %}
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{ url_for('index') }}">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="{{ url_for('exercise') }}">Exercise</a>
+      </li>
+    </ul>
+{% endblock %}
+{% block body %}
+<div class="exercisetype">
+<form method="POST">
+  <h1 id="title">DO YOU WANT TO GET BIG TODAY?</h1>
+  <input id="placeholder" name="exerciselookup" placeholder="Enter an exercise"/>
+  <div class="searchbar">
+  <label for="exercise">Search by: </label>
+<select name="exercise" id="exercise">
+  <option value="Muscle" name="muscle">Muscle</option>
+  <option value="Exercise" name="exercise">Exercise</option>
+</select>
+  </div>
+</div>
+</form>
+</div>
+ <div class="exercisetext">
+  <div class="container">
+    <div class="row">
+      {% for i in range(0, len) %}
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 border">
+            <img class="card-img-top" src={{imagesList[i]}} alt="exercise">
+            <div class="card-body">
+              <h5 class="card-title">{{exerciseList[i]}}</h5>
+             <a href="{{ url_for('exercisepage', index=i) }}" class="btn btn-primary">View Exercise</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

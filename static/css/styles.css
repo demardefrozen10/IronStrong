@@ -1,0 +1,106 @@
+.title {
+   font-size: 30px;
+   text-align: center;
+   margin-top: 50px;
+}
+.exercisetype {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+.exercisetext {
+    margin: auto;
+  padding: 10px;
+  display: flex;
+  margin-left: 390px;
+  margin-top: 50px;
+  width: 50%;
+}
+.card-img-top {
+  }
+
+.exerciseTitle {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.active a{
+    color: red !important;
+}
+
+.mainExerciseImage {
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 500px;
+}
+
+
+body {
+     background-color: rgba(249, 246, 238, 0.6) !important;
+     background-image: url("https://staticg.sportskeeda.com/editor/2022/08/471f9-16609079272704-1920.jpg");
+}
+
+#title {
+  text-align: center;
+  margin-top: 10%;
+  color:  white;
+}
+#placeholder {
+  margin-left: 4px;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color:  white;
+  width: 30%;
+  height: 7%;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+::placeholder {
+  color: white;
+  font-size: 19px;
+}
+
+.searchbar {
+    margin-left: 20px;
+    margin-top: 25px;
+    color: white;
+}
+
+select {
+background-color: rgba(255, 255, 255, 0.1);
+  border-color:  white;
+  width: 10%;
+  height: 7%;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+
+select option {
+  color: black; /* set the color of the dropdown options to black */
+}
+
+select ::selection {
+  background: white;
+  color: black; /* set the color of the selected text in the box to black */
+}
+
+.cardgang {
+margin-left: 450px;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.exerciseInstructions {
+max-width: 500px;
+margin-left: 70px;
+text-align: center;
+}
+
+.exerciseimage {
+height: 500px;
+}
