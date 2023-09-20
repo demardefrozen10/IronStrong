@@ -1,4 +1,4 @@
-![img.png](img.png)
+![ironstronglogo.png](ironstronglogo.png)
 # IronStrong
 
 This project was made using Python's web framework Flask and CSS framework Bootstrap, along with Vanilla HTML/CSS.
