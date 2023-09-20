@@ -4,14 +4,19 @@
     {% endblock %}
 {% block nav %}
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item active ">
         <a class="nav-link text-white" href="{{ url_for('index') }}">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="{{ url_for('exercise') }}">Exercise</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{url_for('warmup') }}">Warmup</a>
+      </li>
     </ul>
 {% endblock %}
 {% block body %}
-
+<h1 class="hometitle">Home To The</br>Best Workout Page</h1>
+<p class="hometext">IronStrong helps you find the best exercises for </br>your workout while also helping you warm up for</br> particular exercises.</p>
+<button class="myButton" onclick="location.href='{{url_for('exercise')}}'">Discover IronStrong</button>
 {% endblock %}

@@ -7,8 +7,11 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="{{ url_for('index') }}">Home</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active text-danger">
         <a class="nav-link text-white" href="{{ url_for('exercise') }}">Exercise</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{url_for('warmup') }}">Warmup</a>
       </li>
     </ul>
 {% endblock %}
@@ -31,12 +34,12 @@
   <div class="container">
     <div class="row">
       {% for i in range(0, len) %}
-        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4 ">
           <div class="card h-100 border">
             <img class="card-img-top" src={{imagesList[i]}} alt="exercise">
             <div class="card-body">
               <h5 class="card-title">{{exerciseList[i]}}</h5>
-             <a href="{{ url_for('exercisepage', index=i) }}" class="btn btn-primary">View Exercise</a>
+             <a href="{{ url_for('exercisepage', index=i) }}" class="btn btn-primary bg-danger border border-danger">View Exercise</a>
             </div>
           </div>
         </div>

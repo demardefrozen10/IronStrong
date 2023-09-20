@@ -13,6 +13,7 @@ def index():
 def warmup():
     return render_template('warmup.html')
 
+
 @app.route('/exercisepage/<int:index>')
 def exercisepage(index):
     force = ""
@@ -45,8 +46,7 @@ def webScraper():
            imagesList.append(image['src'])
            break
     return imagesList
-
-@app.route("/", methods = (["POST", "GET"]))
+@app.route('/exercise', methods = (["POST", "GET"]))
 def exercise():
     if request.method == "POST":
         import requests
@@ -55,9 +55,9 @@ def exercise():
         muscleGroup = request.form.get('exercise')
         exericse1 = request.form.get("exerciselookup")
         if (muscleGroup == 'Muscle'):
-            querystring = {"type":"strength","muscle":exericse1}
+            querystring = {"type": "strength", "muscle": exericse1}
         else:
-            querystring = {"name":exericse1,"type":"strength"}
+            querystring = {"name": exericse1, "type": "strength"}
         headers = {
             "X-RapidAPI-Key": "ece8cbe447msh4845768944b6cb6p169c19jsn8bd3677a3d2f",
             "X-RapidAPI-Host": "exercises-by-api-ninjas.p.rapidapi.com"
@@ -68,7 +68,7 @@ def exercise():
         global exerciseList
         exerciseList = []
         muscleList = []
-        for x in range (len(Dictonary)):
+        for x in range(len(Dictonary)):
             capitalizedString = (Dictonary[x].get('name')).title()
             exerciseList.append(capitalizedString)
             muscleList.append((Dictonary[x].get('muscle')))
@@ -76,11 +76,13 @@ def exercise():
         if (len(exerciseList) == 0 or len(muscleList) == 0):
             return render_template('exercisenotfound.html')
         else:
-            return render_template('exercise.html', exerciseList = exerciseList, len = len(exerciseList), imagesList = imagesList, muscleList = muscleList)
+            return render_template('exercise.html', exerciseList=exerciseList, len=len(exerciseList), imagesList=imagesList, muscleList=muscleList)
     return render_template('preexercise.html')
+
+@app.route("/")
+def test():
+    return render_template('index.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-exerciseList = exercise()
-print(exerciseList)
